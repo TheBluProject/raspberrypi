@@ -190,6 +190,12 @@
             // Run the input processor (new to call new version of the input processor..)
             new_process_inputs($userid,$inputs);
 
+            // Add the time sending to EmonGLCD
+             $hour = date('H');
+             $min = date('i');
+             fprintf($f,$hour.",00,".$min.",00,s");
+             sleep(1);
+
             if ($sent_to_remote == true)
             {
               if ($ni!=0) $remotedata .= ",";
