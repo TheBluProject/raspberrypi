@@ -127,7 +127,7 @@
         $remotetimer = time();
 
         $remotedata .= "]";
-        echo "Sending remote data";
+        echo "Sending remote data\n";
         //echo $remotedata."\n";
         getcontent($remotedomain,80,"/input/bulk.json?apikey=".$remoteapikey."&data=".$remotedata);
         $ni = 0; $remotedata = "[";
